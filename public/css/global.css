@@ -1,0 +1,132 @@
+/* GLOBAL MINT THEME — HabitFlow */
+
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+/* PAGE BACKGROUND */
+body {
+  background: #E1EBE6;   /* soft mint-grey */
+  color: #2B3A38;        /* deep greenish-gray */
+  line-height: 1.6;
+}
+
+/* MAIN CONTAINER */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 40px auto;
+}
+
+/* ============================
+      HEADER / NAVBAR
+=============================== */
+.main-header {
+  background: #A9C3C0;     /* medium mint */
+  padding: 16px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #8FAEAA;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2B3A38;
+}
+
+.logo span {
+  color: #4F7F79;  /* dark teal */
+}
+
+/* NAV LINKS */
+.navbar .nav-link {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #2B3A38;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #4F7F79;
+}
+
+/* ============================
+      CARD STYLE
+=============================== */
+.card {
+  background: #D9E7E4;     /* pale mint */
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(60, 80, 78, 0.15);
+  margin-bottom: 25px;
+}
+
+/* HEADINGS */
+h1, h2, h3 {
+  color: #2B3A38;
+  margin-bottom: 15px;
+}
+
+/* INPUTS */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #A9C3C0;
+  background: #D9E7E4;
+  color: #2B3A38;
+  margin-bottom: 18px;
+  font-size: 15px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #4F7F79;
+  box-shadow: 0 0 8px rgba(79, 127, 121, 0.4);
+}
+
+/* BUTTONS */
+.btn {
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  transition: 0.25s;
+}
+
+/* PRIMARY BUTTON */
+.btn.primary {
+  background: #4F7F79;  /* dark teal */
+  color: white;
+}
+
+.btn.primary:hover {
+  background: #3F6A65;
+}
+
+/* SECONDARY BUTTON */
+.btn.secondary {
+  border: 2px solid #4F7F79;
+  background: transparent;
+  color: #4F7F79;
+}
+
+.btn.secondary:hover {
+  background: #4F7F79;
+  color: white;
+}

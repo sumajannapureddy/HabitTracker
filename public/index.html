@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Dashboard — HabitFlow</title>
+
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/dashboard.css">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" aria-label="Main navigation">
+    <div class="sidebar-top">
+      <div class="logo-compact">
+        <span class="brand-accent">Habit</span><span>Flow</span>
+      </div>
+
+      <div id="profile" class="profile">
+        <div class="avatar" aria-hidden="true">HF</div>
+        <div class="profile-info">
+          <div id="profile-name" class="profile-name">User</div>
+          <div class="profile-role">Member</div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="side-nav" aria-label="Primary">
+      <a href="/dashboard" class="side-link active">Dashboard</a>
+      <a href="/add-habit" class="side-link">Add Habit</a>
+      <a href="/habits" class="side-link">All Habits</a>
+      <a href="/analytics" class="side-link">Analytics</a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <button class="btn-ghost" onclick="logoutUser()">Logout</button>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+    <header class="topbar">
+      <div class="topbar-left">
+        <!-- small title to match the header previously -->
+        <h1 class="page-title">Dashboard</h1>
+      </div>
+
+      <div class="topbar-right">
+        <div id="today-date" class="today-date" aria-hidden="true"></div>
+      </div>
+    </header>
+
+    <section class="hero-section">
+      <h2>Welcome back <span id="wave">👋</span></h2>
+      <p class="subtitle">Your personal habit journey continues below.</p>
+
+      <div class="hero-actions">
+        <button class="hero-btn" onclick="window.location.href='/add-habit'">Add New Habit</button>
+      </div>
+    </section>
+
+    <section class="stats-section">
+      <h3 class="section-title">Your Overview</h3>
+
+      <div class="stats-row">
+        <div class="stat-block">
+          <p class="stat-label">Total Habits</p>
+          <h3 id="stats-total">0</h3>
+        </div>
+
+        <div class="stat-block">
+          <p class="stat-label">Completed Today</p>
+          <h3 id="stats-completed">0</h3>
+        </div>
+
+        <div class="stat-block">
+          <p class="stat-label">Best Streak</p>
+          <h3 id="stats-best">0</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="today-section">
+      <h3 class="section-title">Today's Habits</h3>
+
+      <div class="today-box">
+        <div id="today-habits-text">No habits for today.</div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>© 2025 HabitFlow — Build Better Habits</p>
+    </footer>
+  </main>
+
+  <!-- Required scripts (must keep order) -->
+  <script src="/js/config.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/auth-check.js"></script>
+
+  <!-- small inline bootstrap that reads user and date (safe) -->
+  <script>
+    // enforce login and set profile name
+    const user = requireLogin(); // will redirect to /login if not logged in
+    if (user) {
+      const n = (user.full_name || user.name || user.email || "User");
+      document.getElementById("profile-name").innerText = n;
+      // build avatar initials if avatar element exists
+      const parts = n.split(" ").filter(Boolean);
+      let initials = parts.length ? parts[0].charAt(0) : "U";
+      if (parts.length > 1) initials += parts[1].charAt(0);
+      const avatarEl = document.querySelector(".avatar");
+      if (avatarEl) avatarEl.textContent = initials.toUpperCase();
+    }
+
+    // small date display
+    (function showDate(){
+      const d = new Date();
+      const opts = { weekday: 'short', month: 'short', day: 'numeric' };
+      const txt = d.toLocaleDateString(undefined, opts);
+      const el = document.getElementById("today-date");
+      if (el) el.textContent = txt;
+    })();
+  </script>
+
+  <!-- dashboard behavior (analytics + today) -->
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>

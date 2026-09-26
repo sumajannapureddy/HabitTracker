@@ -1,0 +1,65 @@
+/* WELCOME PAGE — Soft Teal Minimal Theme */
+
+.welcome-container {
+  text-align: center;
+  margin-top: 140px;
+  padding: 20px;
+}
+
+/* Main Logo */
+.logo {
+  font-size: 52px;
+  font-weight: 800;
+  color: #5D8F8A;                     /* teal primary */
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: #24384B;                     /* navy for contrast */
+}
+
+/* Tagline */
+.tagline {
+  margin-top: 18px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #6E6660;                     /* warm taupe-gray */
+}
+
+/* Button container */
+.welcome-buttons {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+/* Buttons */
+.welcome-buttons .btn {
+  padding: 12px 26px;
+  font-size: 17px;
+}
+
+/* Primary button (teal) */
+.welcome-buttons .btn.primary {
+  background: #5D8F8A;
+  color: white;
+  box-shadow: 0 0 15px rgba(93, 143, 138, 0.35); /* soft teal glow */
+}
+
+.welcome-buttons .btn.primary:hover {
+  background: #49706C;                /* deeper teal */
+  box-shadow: 0 0 20px rgba(93, 143, 138, 0.55);
+}
+
+/* Secondary (outline) */
+.welcome-buttons .btn.secondary {
+  border: 2px solid #5D8F8A;
+  color: #5D8F8A;
+  background: transparent;
+}
+
+.welcome-buttons .btn.secondary:hover {
+  background: #5D8F8A;
+  color: white;
+}

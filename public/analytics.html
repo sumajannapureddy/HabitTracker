@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Analytics - HabitFlow</title>
+
+  <!-- FIXED CSS PATHS -->
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/analytics.css">
+</head>
+
+<body>
+
+<header class="main-header">
+  <div class="logo">Habit<span>Flow</span></div>
+
+  <nav class="navbar">
+    <a href="/dashboard" class="nav-link">Dashboard</a>
+    <a href="/add-habit" class="nav-link">Add Habit</a>
+    <a href="/habits" class="nav-link">All Habits</a>
+    <a href="/analytics" class="nav-link active">Analytics</a>
+    <a href="#" onclick="logoutUser()" class="nav-link">Logout</a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <!-- TITLE CARD -->
+  <div class="stats-title-card">
+    <h2>Your Stats</h2>
+  </div>
+
+  <!-- STATS BOX CONTAINER -->
+  <div class="stats-box-container">
+
+    <div class="stat-box">
+      <p>Total Habits</p>
+      <h3 id="a-total">0</h3>
+    </div>
+
+    <div class="stat-box">
+      <p>Completed Today</p>
+      <h3 id="a-today">0</h3>
+    </div>
+
+    <div class="stat-box">
+      <p>Best Streak</p>
+      <h3 id="a-best">0</h3>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- CORRECT JS ORDER -->
+<script src="/js/config.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/auth-check.js"></script>
+
+<script>
+  const user_id = requireLogin();
+</script>
+
+<script src="/js/analytics.js"></script>
+
+</body>
+</html>

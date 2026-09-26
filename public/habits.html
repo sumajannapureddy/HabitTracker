@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Habits - HabitFlow</title>
+
+  <!-- FIXED CSS PATHS -->
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/habits.css">
+</head>
+<body>
+
+<header class="main-header">
+  <div class="logo">Habit<span>Flow</span></div>
+
+  <nav class="navbar">
+    <a href="/dashboard" class="nav-link">Dashboard</a>
+    <a href="/add-habit" class="nav-link">Add Habit</a>
+    <a href="/habits" class="nav-link active">All Habits</a>
+    <a href="/analytics" class="nav-link">Analytics</a>
+    <a href="#" onclick="logoutUser()" class="nav-link">Logout</a>
+  </nav>
+</header>
+
+<main class="container">
+  <h2>Your Habits</h2>
+
+  <div id="habits-list"></div>
+</main>
+
+<!-- CORRECT JS ORDER & PATHS -->
+
+<script src="/js/config.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/auth-check.js"></script>
+
+<script>
+  const user_id = requireLogin();
+</script>
+
+<script src="/js/habits.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+.admin-box {
+  margin-top: 40px;
+}
+
+.title {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+table {
+  width: 100%;
+  background: white;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+th {
+  background: #5D8F8A;
+  color: white;
+  padding: 12px;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+  background: #eef6f4;
+}
+
+.btn-del {
+  background: #e74c3c;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-del:hover {
+  background: #c0392b;
+}

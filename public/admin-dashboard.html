@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard — HabitFlow</title>
+
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/navbar.css">
+
+  <style>
+      body { background: #F4F5EE; font-family: Arial; }
+
+      .admin-box { margin-top: 30px; }
+      .title { margin-top: 40px; font-size: 22px; font-weight: 600; }
+
+      table {
+          width: 100%;
+          border-collapse: collapse;
+          background: white;
+          margin-top: 15px;
+          border-radius: 10px;
+          overflow: hidden;
+      }
+      th {
+          background: #5D8F8A;
+          color: white;
+          padding: 10px;
+          text-align: left;
+      }
+      td {
+          border-bottom: 1px solid #ddd;
+          padding: 10px;
+      }
+      tr:hover { background: #eef6f4; }
+
+      .btn-del {
+          padding: 6px 12px;
+          background: #e74c3c;
+          border: none;
+          border-radius: 5px;
+          color: white;
+          cursor: pointer;
+      }
+      .btn-del:hover { background: #c0392b; }
+  </style>
+</head>
+
+<body>
+
+<header class="main-header">
+  <div class="logo">Habit<span>Flow Admin</span></div>
+
+  <nav class="navbar">
+    <a href="/admin/dashboard" class="nav-link active">Dashboard</a>
+    <a href="#" onclick="logoutAdmin()" class="nav-link">Logout</a>
+  </nav>
+</header>
+
+<main class="container">
+
+  <h2>Admin Dashboard</h2>
+  <p>Manage users and habits.</p>
+
+  <!-- USERS -->
+  <div class="admin-box">
+      <h2 class="title">All Users</h2>
+      <table>
+          <thead>
+              <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Action</th>
+              </tr>
+          </thead>
+          <tbody id="users-table"></tbody>
+      </table>
+  </div>
+
+  <!-- HABITS -->
+  <div class="admin-box">
+      <h2 class="title">All Habits</h2>
+      <table>
+          <thead>
+              <tr>
+                  <th>ID</th>
+                  <th>User ID</th>
+                  <th>Name</th>
+                  <th>Category</th>
+                  <th>Streak</th>
+                  <th>Action</th>
+              </tr>
+          </thead>
+          <tbody id="habits-table"></tbody>
+      </table>
+  </div>
+
+</main>
+
+<!-- ===========================
+      CORRECT JS ORDER
+=========================== -->
+
+<script src="/js/config.js"></script>
+<script src="/js/auth.js"></script>
+
+<!-- REQUIRED FOR adminRequireLogin() -->
+<script src="/js/admin-auth-check.js"></script>
+
+<script>
+    adminRequireLogin();
+</script>
+
+<script src="/js/admin-dashboard.js"></script>
+
+</body>
+</html>
